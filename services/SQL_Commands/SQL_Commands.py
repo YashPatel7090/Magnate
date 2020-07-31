@@ -1,0 +1,9 @@
+#########################
+
+THESE SQL COMMANDS ARE OUTDATED. DO NOT USE.
+LOOK AT THE RESET_DATABASE FUNCTION IN CLASS 'USER' FOR NEW SQL COMMANDS.
+
+#########################
+
+
+

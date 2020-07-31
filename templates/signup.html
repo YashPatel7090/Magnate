@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+<script src="{{ url_for('static', filename='javascript/signup.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<body class="signup-body" id="signup-body">
+    <div class="signup-background" id="signup-background"></div>
+    <div class="signup-whitebox" id="signup-whitebox"></div>
+    <div class="signup-title" id="signup-title">
+        <h1><b>Hello, {{ username }}</b></h1>
+    </div>
+    <div class="signup-infosection" id="signup-infosection">
+        <h2>An email has been sent to your email address ({{ email }}). 
+            Please open up the email and click on the button to verify your account.
+            Thank you. 
+        </h2>
+    </div>
+    <div class="signup-button-back-to-log-in" id="signup-button-back-to-log-in">
+        <button><text>Back to Log in</text></button>
+    </div>
+
+</body>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user_data.css') }}">
+<script src="{{ url_for('static', filename='javascript/user_data.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<body class="user_data-body" id="user_data-body">
+    <h1>Hello, {{ data['username'] }}. This is your personal data.</h1>
+
+</body>
+{% endblock %}
+

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<script src="{{ url_for('static', filename='javascript/login.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<body class="login-body" id="login-body">
+    <div class="login-background" id="login-background"></div>
+    <div class="login-whitebox" id="login-whitebox"></div>
+
+    {% if send_failure: %}
+    <div class="login-notification-send_failure" id="login-notification-send_failure">
+        <h1>Invalid email: {{ user_email }}</h1>
+    </div>
+    {% endif %}
+
+    {% if account_already_exists: %}
+    <div class="login-notification-account_already_exists" id="login-notification-account_already_exists">
+        <h1>An account is already registered with this email: {{ user_email }}</h1>
+    </div>
+    {% endif %}
+
+    {% if email_already_sent: %}
+    <div class="login-notification-email_already_sent" id="login-notification-email_already_sent">
+        <h1>Verify your account via email: {{ user_email }}</h1>
+    </div>
+    {% endif %}
+
+    {% if verified: %}
+    <div class="login-notification-verified" id="login-notification-verified">
+        <h1>Your account has been Verified. You can now Log in.</h1>
+    </div>
+    {% endif %}
+
+    {% if incorrect_credentials: %}
+    <div class="login-notification-incorrect_credentials" id="login-notification-incorrect_credentials">
+        <h1>The username or password is incorrect.</h1>
+    </div>
+    {% endif %}
+
+    {% if click_signup: %}
+    <div class="login-notification-click_signup" id="login-notification-click_signup">
+        <h1>You need to create an account first.</h1>
+    </div>
+    {% endif %}
+
+    <div class="login-title" id="login-title">
+        <h1><b>Account</b></h1>
+    </div>
+    <form id="login-form">
+        <div class="login-username" id="login-username">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="login-usernamecontent">
+        </div>
+        <div class="login-email" id="login-email">
+            <label><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="login-emailcontent">
+        </div>
+        <div class="login-password" id="login-password">
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="login-passwordcontent">
+        </div>
+    </form>
+    <div class="login-loginbutton" id="login-loginbutton">
+        <button><text>Log in</text></button>
+    </div>
+    <div class="login-signupbutton" id="login-signupbutton">
+        <button><text>Sign up</text></button>
+    </div>
+
+</body>
+{% endblock %}
+

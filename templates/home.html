@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block staticfiles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<script src="{{ url_for('static', filename='javascript/home.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<body class="home-body" id="home-body">
+
+    <div class="home-background-1" id="home-background-1">
+        <div class="home-darklayer" id="home-darklayer"></div>
+    </div>
+    <div class="home-section-1" id="home-section-1">
+        <h1>Welcome to Magnate</h1><br>
+        <button type="start" id="home-startbutton"><text><b>Start</b></text></button>
+    </div>
+    
+    <div class="home-background-2" id="home-background-2"></div>
+    <div class="home-section-2" id="home-section-2">
+        <h1>About Magnate</h1>
+        <h3>Magnate uses state-of-the-art machine learning algorithms and deep learning neural networks to browse 
+            the World Wide Web. Magnate returns information about the best investment opportunities in real-time. 
+            Customizable and profitable, Magnate has the potential to change your life. No more expensive brokers.
+            No more expensive real estate agents. Just Magnate. 
+        </h3>
+    </div>
+
+</body>
+{% endblock %}
+
